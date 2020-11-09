@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:id="@+id/content_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <RelativeLayout
+            android:id="@+id/top_bar"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+            <ImageButton
+                android:id="@+id/btn_cancel"
+                android:layout_alignParentStart="true"
+                android:layout_height="match_parent"
+                android:layout_width="48dp"
+                android:src="@drawable/cancel"
+                android:background="@color/colorTransparent"
+                android:scaleType="fitXY"
+                android:padding="10dp"
+                android:layout_alignParentLeft="true" />
+            <TextView
+                android:id="@+id/txt_topbar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:textSize="18sp"
+                android:textColor="@color/colorAccent"
+                android:text="Share Your Life"/>
+            <ImageButton
+                android:id="@+id/btn_send"
+                android:layout_alignParentEnd="true"
+                android:layout_height="match_parent"
+                android:layout_width="48dp"
+                android:src="@drawable/send"
+                android:background="@color/colorTransparent"
+                android:scaleType="fitXY"
+                android:padding="10dp"
+                android:layout_alignParentRight="true" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2px"
+                android:background="@color/colorGrey"
+                android:layout_alignParentBottom="true"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:id="@+id/edit_area"
+            android:layout_below="@+id/top_bar"
+            android:layout_height="match_parent">
+            <EditText
+                android:id="@+id/post_et_content"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:hint="share life"
+                android:gravity="top"
+                android:background="@null"
+                android:paddingRight="10dp"
+                android:paddingLeft="10dp" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_editImage"
+                android:layout_below="@+id/post_et_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="20dp" />
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <include
+        android:id="@+id/emoji_layout"
+        layout="@layout/emoji_keyboard_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</LinearLayout>

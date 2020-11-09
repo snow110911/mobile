@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- TODO: Update blank fragment layout -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/colorTransparent"
+        android:id="@+id/user_rl_title">
+        <TextView
+            android:id="@+id/txt_topbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center_horizontal"
+            android:textSize="18sp"
+            android:textColor="@color/colorAccent"
+            android:text="Me"
+            android:textStyle="bold"/>
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:id="@+id/iv_signin_out"
+            android:foregroundGravity="right"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/signout"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2px"
+            android:background="@color/colorGrey"
+            android:layout_alignParentBottom="true"/>
+    </RelativeLayout>
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/img_header"
+        android:layout_marginLeft="40dp"
+        android:background="#FFFF"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/user_rl_title"
+        android:src="@mipmap/header"/>
+    <TextView
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_name"
+        android:textColor="#000000"
+        android:text="Sign In"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:textSize="30sp"
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/user_rl_title"        android:layout_marginStart="20dp"
+        android:layout_toRightOf="@+id/img_header"
+        android:layout_marginLeft="20dp" />
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:id="@+id/img_edit"
+        android:layout_toRightOf="@+id/img_header"
+        android:layout_marginTop="25dp"
+        android:layout_below="@+id/user_rl_title"        android:src="@drawable/edit"
+        android:layout_marginLeft="250dp" />
+    <ImageView
+        android:layout_width="33dp"
+        android:layout_height="33dp"
+        android:id="@+id/iv_myCollection"
+        android:layout_below="@+id/img_edit"
+        android:layout_alignStart="@+id/img_edit"
+        android:layout_marginTop="15dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/wodeshoucang"
+        android:layout_alignLeft="@+id/img_edit" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/liner_tvs"
+        android:layout_below="@+id/tv_name"
+        android:layout_marginStart="110dp"
+        android:layout_marginEnd="80dp"
+        android:layout_marginLeft="110dp"
+        android:layout_marginRight="80dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_email"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_sex"
+            android:visibility="gone"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_age"
+            android:visibility="gone"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_phone"
+            android:visibility="gone"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_location"
+            android:visibility="gone"/>
+
+    </LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_postsTitle"
+        android:text="Posts:"
+        android:textSize="20sp"
+        android:textColor="#000000"
+        android:layout_below="@+id/liner_tvs"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="20dp"
+        />
+    <com.scwang.smart.refresh.layout.SmartRefreshLayout
+        android:id="@+id/user_refresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/tv_postsTitle">
+        <com.scwang.smart.refresh.header.ClassicsHeader
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/user_recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/tv_postsTitle"/>
+    </com.scwang.smart.refresh.layout.SmartRefreshLayout>
+
+
+
+
+
+
+
+</RelativeLayout>

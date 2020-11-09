@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:id="@+id/bot_bar"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/colorShadowGrey">
+        <ImageButton
+            android:layout_marginLeft="5dp"
+            android:id="@+id/btn_emoji"
+            android:layout_alignParentLeft="true"
+            android:layout_height="match_parent"
+            android:layout_width="40dp"
+            android:src="@drawable/btn_emoji"
+            android:background="@color/colorShadowGrey"
+            android:scaleType="centerInside"
+            android:padding="6dp"
+            />
+        <ImageButton
+            android:id="@+id/btn_At"
+            android:layout_toEndOf="@+id/btn_emoji"
+            android:layout_height="match_parent"
+            android:layout_width="40dp"
+            android:layout_marginStart="80dp"
+            android:src="@drawable/at"
+            android:background="@color/colorShadowGrey"
+            android:scaleType="centerInside"
+            android:padding="5dp"
+            android:layout_toRightOf="@+id/btn_emoji"
+            android:layout_marginLeft="80dp" />
+        <ImageButton
+            android:id="@+id/btn_hash"
+            android:layout_toEndOf="@+id/btn_At"
+            android:layout_height="match_parent"
+            android:layout_width="40dp"
+            android:layout_marginStart="80dp"
+            android:src="@drawable/hash"
+            android:background="@color/colorShadowGrey"
+            android:scaleType="centerInside"
+            android:padding="5dp"
+            android:layout_toRightOf="@+id/btn_At"
+            android:layout_marginLeft="80dp" />
+<!--        <ImageButton-->
+<!--            android:id="@+id/btn_local_video"-->
+<!--            android:layout_toEndOf="@+id/btn_camera"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:layout_width="40dp"-->
+<!--            android:layout_marginStart="48dp"-->
+<!--            android:src="@drawable/btn_emoji"-->
+<!--            android:background="@color/colorShadowGrey"-->
+<!--            android:scaleType="centerInside"-->
+<!--            android:padding="5dp" />-->
+        <ImageButton
+            android:id="@+id/btn_video"
+            android:layout_toEndOf="@+id/btn_hash"
+            android:layout_height="match_parent"
+            android:layout_width="40dp"
+            android:layout_marginStart="80dp"
+            android:src="@drawable/video"
+            android:background="@color/colorShadowGrey"
+            android:scaleType="centerInside"
+            android:padding="5dp"
+            android:layout_toRightOf="@+id/btn_hash"
+            android:layout_marginLeft="80dp" />
+
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/emoji_keyboard"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_below="@+id/bot_bar"
+        android:visibility="gone"
+        >
+        <GridView
+            android:id="@+id/grid_emoji_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:numColumns="7"
+            android:horizontalSpacing="2dp"
+            android:verticalSpacing="2dp"
+            android:padding="10dp"
+            android:clipToPadding="false"
+            />
+    </RelativeLayout>
+</RelativeLayout>
