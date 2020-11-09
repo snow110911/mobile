@@ -54,7 +54,6 @@ public class EditProfileActivity extends AppCompatActivity implements View.OnCli
     private Uri imguri;
     private ImageButton picture, camera;
 
-//    ImageAdapter mImageAdapter;
 
     public static final int TAKE_PHOTO_CODE = 1;
     public static final int SELECT_IMAGE_CODE = 111;
@@ -69,7 +68,6 @@ public class EditProfileActivity extends AppCompatActivity implements View.OnCli
         phone = findViewById(R.id.et_phone);
         male = findViewById(R.id.rb_male);
         female = findViewById(R.id.rb_female);
-//        email = findViewById(R.id.email);
         image = findViewById(R.id.image_view);
         location = findViewById(R.id.et_location);
         male = findViewById(R.id.rb_male);
@@ -80,7 +78,6 @@ public class EditProfileActivity extends AppCompatActivity implements View.OnCli
         picture.setOnClickListener(this);
         camera = findViewById(R.id.ed_camera);
         camera.setOnClickListener(this);
-//        UserEntity user = new UserEntity(MeFragment.currentuser);
         if(MeFragment.currentuser.getHeader()!=null&&!MeFragment.currentuser.getHeader().equals("")){
             Database.download_headerImage(MeFragment.currentuser.getHeader(),EditProfileActivity.this,image);
 
@@ -105,7 +102,7 @@ public class EditProfileActivity extends AppCompatActivity implements View.OnCli
         }
 
     }
-
+// inovke camera service
     private void dispatchTakePictureIntent() {
         Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
